@@ -43,7 +43,7 @@ All commands below assume your current working directory is the project root (th
 docker compose up --build
 ```
 
-This builds the image (if needed) and starts the `voice-app` service. The container listens on port `5001`. After startup you can open http://localhost:5001 in your browser.
+This builds the image (if needed) and starts the `voice-app` service. The container listens on port `5001`. After startup you can open [http://localhost:5001](http://localhost:5001) in your browser.
 
 - Start in detached/background mode:
 
@@ -84,7 +84,7 @@ docker compose down --rmi local --volumes --remove-orphans
 ## How to use the app
 
 1. Start the compose stack (see commands above).
-2. Open your browser to: http://localhost:5001
+2. Open your browser to: [http://localhost:5001](http://localhost:5001)
 3. Click "Start Recording" and allow microphone access in the browser.
 4. The page will record short chunks (~2s), upload them to the `/stream` endpoint, and append transcribed text to the transcript area.
 
@@ -92,7 +92,7 @@ The app uses `ffmpeg` inside the container to convert browser audio to a WAV fil
 
 ## Troubleshooting
 
-- Permission / Microphone denied in browser: Ensure the page (http://localhost:5001) is allowed to use your microphone and that you’re using a secure context (localhost is treated as secure).
+- Permission / Microphone denied in browser: Ensure the page ([http://localhost:5001](http://localhost:5001)) is allowed to use your microphone and that you’re using a secure context (localhost is treated as secure).
 - Port in use: If port `5001` is already in use on your machine, either stop the process using it or edit `docker-compose.yml` to change the mapping (e.g. `5002:5001`).
 - Slow startup or large wheel downloads: The first Docker build may take time because `torch` / Whisper dependencies can be large. Be patient on the first run.
 - Model download: Whisper (and PyTorch) may download model weights at first run when `whisper.load_model(...)` is called. If you need smaller memory/space usage, edit `app.py` to use a smaller model (e.g., `tiny`) or modify the Dockerfile to cache models externally.
