@@ -1,0 +1,4 @@
+git+https://github.com/AnswerDotAI/fasthtml.git
+httpx
+openai-whisper 
+torch
